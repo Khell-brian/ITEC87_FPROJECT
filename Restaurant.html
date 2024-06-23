@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        /* styles.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Brush Script MT', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    background-image: url('menu/bg.gif'); /* Replace 'background.jpg' with your image path */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-size: auto 120%;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 20%;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-top: -10px;
+}
+
+nav {
+    margin-top: 0px;
+    height: 50px;
+}
+
+nav a {
+    font-family: Georgia, serif;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px;
+    transition: background 0.3s;
+    font-size: 20px;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+main {
+    padding: 20px;
+    padding-top: 150px; /* Adjusted padding for fixed header */
+}
+
+section {
+    margin-bottom: 50px;
+    padding-top: 240px;
+    padding-bottom: 130px;
+    text-align: center;
+}
+
+section h2 {
+    padding-bottom: 10px;
+    color: white;
+    margin-top: 50px; /* Adjusted margin for spacing */
+}
+
+.dish-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center items horizontally */
+    padding-top: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-bottom: 5px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-radius: 20px;
+    
+}
+
+.dish {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Adjusted width for responsiveness */
+    max-width: 300px; /* Maximum width for larger screens */
+    height: 350px;
+    transition: transform 0.3s ease;
+    margin-bottom: 50px;
+    
+}
+
+.dish:hover {
+    transform: scale(1.05);
+}
+
+.dish img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dish-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.dish-details h3 {
+    margin: 0;
+    color: #333;
+}
+
+.dish-details p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #666;
+}
+
+.quantity {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Adjustments for footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .order-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+}
+
+footer label {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+footer input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 150px; /* Adjusted width for input fields */
+    text-align: center;
+    margin: 5px; /* Added margin for spacing */
+}
+
+footer button {
+    background: #f90;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 5px; /* Added margin for spacing */
+    border-radius: 10px;
+}
+
+footer button:hover {
+    background: #e80;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    body{
+        overflow-y: visible; /* Hide vertical scrollbar */
+        overflow-x: visible; /* Hide horizontal scrollbar */
+        background-size: 100% 120%;
+    }
+
+    section {
+    margin-bottom: 50px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    text-align: center;
+    }
+    header{
+        height: 20%;
+    }
+
+    header h1{
+        font-size: 30px;
+    }
+
+    nav{
+        margin-top: -15px;
+    }
+    nav a{
+        padding: 10px; 
+    }
+    nav a:hover{
+        border: none;
+    }
+    .dish-details{
+        height: 10%;
+        font-size: 10px;
+        width: auto;
+    }
+    #back {
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+        font-size: 14px; /* Reduced font size for smaller screens */
+    }
+
+    footer {
+        padding: 5px 0;
+        height: 100px;
+        font-size: 10px; /* Reduced padding for smaller screens */
+    }
+
+    footer .order-actions {
+        flex-direction: row; /* Stack items vertically on smaller screens */
+    }
+
+    footer input {
+        width: 25%;
+        font-size: 10px; /* Full width for input fields on smaller screens */
+    }
+
+    footer button {
+        width: 30%; /* Full width for button on smaller screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-container">
+            <h1>Cahaya Restaurant <br>Menu</h1>
+            <nav>
+                <a href="main.html">Home</a>
+                <a href="#">Top</a>
+                <a href="#main_dish">Main Dish</a>
+                <a href="#vegstable">Vegstable</a>
+                <a href="#dessert">Dessert</a>
+                <a href="#drinks">Drinks</a>
+                <a href="#ads">Add Ons</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="main_dish">
+            <h2>Main Dish</h2>
+            <div class="dish-container">
+                <div class="dish">
+                    <img src="menu/md1.jpg" alt="Mushroom Ramp Steak">
+                    <div class="dish-details">
+                        <h3>Mushroom Ramp Steak</h3>
+                        <p>Php 500.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="500.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/md2.jfif" alt="Beef Rendang">
+                    <div class="dish-details">
+                        <h3>Beef Rendang</h3>
+                        <p>Php 550.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="550.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/md3.jfif" alt="Sizzling Roast Beef">
+                    <div class="dish-details">
+                        <h3>Sizzling Roast Beef</h3>
+                        <p>Php 400.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="400.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/md4.jfif" alt="T-Bone Steak">
+                    <div class="dish-details">
+                        <h3>T-Bone Steak</h3>
+                        <p>Php 430.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="430.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/md5.jpg" alt="Satay Chicken">
+                    <div class="dish-details">
+                        <h3>Satay Chicken</h3>
+                        <p>Php 410.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="410.00">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vegstable">
+            <h2>Vegstable</h2>
+            <div class="dish-container">
+                <div class="dish">
+                    <img src="menu/v1.jpg" alt="Vegetarian Pad Thai">
+                    <div class="dish-details">
+                        <h3>Vegetarian Pad Thai</h3>
+                        <p>Php 180.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="180.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/v2.jfif" alt="Vegstable Tempura">
+                    <div class="dish-details">
+                        <h3>Vegstable Tempura</h3>
+                        <p>Php 120.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="120.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/v3.jfif" alt="Vegetarian Spring Roll">
+                    <div class="dish-details">
+                        <h3>Vegetarian Spring Roll</h3>
+                        <p>Php 160.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="160.00">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dessert">
+            <h2>Dessert</h2>
+            <div class="dish-container">
+                <!-- Dessert items -->
+                <div class="dish">
+                    <img src="menu/d1.jpg" alt="Belgian Waffles">
+                    <div class="dish-details">
+                        <h3>Belgian Waffles</h3>
+                        <p>Php 90.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="90.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/d2.jpg" alt="Ice Cream Sundae">
+                    <div class="dish-details">
+                        <h3>Ice Cream Sundae</h3>
+                        <p>Php 100.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="100.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/d3.jpg" alt="Chocolate Mouse Cup">
+                    <div class="dish-details">
+                        <h3>Chocolate Mouse Cup</h3>
+                        <p>Php 160.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="160.00">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks">
+            <h2>Drinks</h2>
+            <div class="dish-container">
+                <!-- Drinks items -->
+                <div class="dish">
+                    <img src="menu/ds1.jfif" alt="Planter's Punch">
+                    <div class="dish-details">
+                        <h3>Planter's Punch</h3>
+                        <p>Php 160.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="160.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/ds2.jpg" alt="Mint Juice">
+                    <div class="dish-details">
+                        <h3>Mint Juice</h3>
+                        <p>Php 200.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="200.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/ds3.jfif" alt="Singapore Sling">
+                    <div class="dish-details">
+                        <h3>Singapore Sling</h3>
+                        <p>Php 240.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="240.00">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ads">
+            <h2>Add Ons</h2>
+            <div class="dish-container">
+                <!-- Add Ons items -->
+                <div class="dish">
+                    <img src="menu/a1.jfif" alt="Soup">
+                    <div class="dish-details">
+                        <h3>Soup</h3>
+                        <p>Php 70.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="70.00">
+                    </div>
+                </div>
+                <div class="dish">
+                    <img src="menu/a2.jfif" alt="Brown Rice">
+                    <div class="dish-details">
+                        <h3>Brown Rice</h3>
+                        <p>Php 50.00</p>
+                        <input type="number" class="quantity" value="" min="1">
+                        <input type="checkbox" class="order-checkbox" data-price="50.00">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="order-actions">
+            <label for="cashInput">Payment:</label>
+            <input type="number" id="cashInput" min="0" placeholder="Enter cash amount">
+            <label>Total Cost:</label>
+            <input type="text" id="totalCost" readonly>
+            <button id="btn_Pay">Place Order</button>
+        </div>
+    </footer>
+    <script>
+        // script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    const orderCheckboxes = document.querySelectorAll('.order-checkbox');
+    const totalCostInput = document.getElementById('totalCost');
+    const cashInput = document.getElementById('cashInput');
+
+    // Update total cost when any checkbox is checked/unchecked
+    function updateTotalCost() {
+        let totalCost = 0;
+        orderCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const price = parseFloat(checkbox.dataset.price);
+                const quantity = parseInt(checkbox.parentElement.querySelector('.quantity').value);
+                totalCost += price * quantity;
+            }
+        });
+        totalCostInput.value = totalCost.toFixed(2);
+    }
+
+    orderCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateTotalCost);
+    });
+
+    // Handle quantity change
+    document.querySelectorAll('.quantity').forEach(quantityInput => {
+        quantityInput.addEventListener('input', updateTotalCost);
+    });
+
+    // Place order button functionality
+    const placeOrderButton = document.getElementById('btn_Pay');
+    placeOrderButton.addEventListener('click', function () {
+        let orderDetails = '';
+        let totalCost = parseFloat(totalCostInput.value);
+        let cash = parseFloat(cashInput.value);
+
+        if (isNaN(cash) || cash <= 0) {
+            alert('Please enter a valid cash amount.');
+            return;
+        } else if (cash < totalCost) {
+            alert('Insufficient Cash.');
+            return;
+        }
+
+        orderCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const dishName = checkbox.parentElement.querySelector('h3').innerText;
+                const price = parseFloat(checkbox.dataset.price);
+                const quantity = parseInt(checkbox.parentElement.querySelector('.quantity').value);
+                const total = (price * quantity).toFixed(2);
+                orderDetails += `${dishName}: Php ${total}\n`;
+            }
+        });
+
+        const change = cash - totalCost;
+
+        if (orderDetails !== '') {
+            orderDetails += `Total Cost: Php ${totalCost.toFixed(2)}\n`;
+            orderDetails += `Payment: Php ${cash.toFixed(2)}\n`;
+            orderDetails += `Cash Change: Php ${change.toFixed(2)}`;
+            alert('Cahaya Restaurant\nThank you for ordering!\nYour order:\n' + orderDetails);
+        } else {
+            alert('Please select at least one item to place the order.');
+        }
+    });
+});
+
+    </script> <!-- Link to external JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FINAL PROJECT</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('image/cct.png');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .loading-window {
+        border: 1px solid black;
+        width: 80%;
+        max-width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 10px 10px 10px 10px rgba(90, 89, 89, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .spinner::before {
+        content: '';
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border: 5px solid rgba(0, 123, 255, 0.3);
+        border-top: 5px solid #007bff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: spin 1s linear infinite;
+    }
+
+    .spinner img {
+        width: 90%;
+        height: 90%;
+        border-radius: 50%;
+        position: relative;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #eee;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .progress-bar-inner {
+        height: 100%;
+        border-radius: 10px;
+        background-color: #007bff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: progress-animation 2s linear forwards;
+    }
+
+    @keyframes progress-animation {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    
+    .loading-text {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    @media (min-width: 576px) {
+        .spinner {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .spinner {
+            width: 100px;
+            height: 100px;
+        }
+
+        .loading-text {
+            font-size: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="loading-window">
+    <div class="spinner">
+        <img src="image/scs.jfif" alt="Loading Image">
+    </div>
+    <div class="progress-bar">
+        <div class="progress-bar-inner"></div>
+    </div>
+    <div class="loading-text">Loading...</div>
+</div>
+<meta http-equiv="refresh" content="3;URL='main.html'">
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Azure.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <img class="logo" src="images/Azure.png" alt="Logo">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <span style="font-size: 20px; color: white;">&#9776;</span>
+      </div>
+      <ul id="menu">
+        <li><a href="Azure.html">Main</a></li>
+        <li><a href="#jeans">Jeans</a></li>
+        <li><a href="#t-shirt">T-Shirts</a></li>
+        <li><a href="#perfume">Perfume</a></li>
+        <li><a href="#sando">Sando</a></li>
+        <li><a href="#toy">Toys</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    <section class="products" id="jeans">
+      <h2>Jeans</h2>
+      <div class="item">
+        <img src="images/jeans1.png" alt="Jeans 1" class="images">
+        <div class="product-details">
+          <h3>Jeans 1</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="jeans1-price">300</span></p>
+        <p class="stockFont"> Current Stock: <span id="jeans1-stock">10</span></p>
+        <button onclick="increaseStock('jeans1')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans2.png" alt="Jeans 2" class="images">
+        <div class="product-details">
+          <h3>Jeans 2</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="jeans2-price">200</span></p>
+        <p class="stockFont">Current Stock: <span id="jeans2-stock">10</span></p>
+        <button onclick="increaseStock('jeans2')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans3.png" alt="Jeans 3" class="images">
+        <div class="product-details">
+          <h3>Jeans 3</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="jeans3-price">250</span></p>
+        <p class="stockFont">Current Stock: <span id="jeans3-stock">10</span></p>
+        <button onclick="increaseStock('jeans3')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans4.jfif" alt="Jeans 4" class="images">
+        <div class="product-details">
+          <h3>Jeans 4</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="jeans4-price">210</span></p>
+        <p class="stockFont">Current Stock: <span id="jeans4-stock">10</span></p>
+        <button onclick="increaseStock('jeans4')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+    <!-- Repeat similar structure for T-Shirts, Perfume, Sando, and Toys sections -->
+
+    <section class="products" id="t-shirt">
+      <h2>T-Shirt</h2>
+      <div class="item">
+        <img src="images/tshirt1.jfif" alt="T-Shirt 1" class="images">
+        <div class="product-details">
+          <h3>T-Shirt 1</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="tshirt1-price">200</span></p>
+        <p class="stockFont"> Current Stock: <span id="tshirt1-stock">10</span></p>
+        <button onclick="increaseStock('tshirt1')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt2.jfif" alt="T-Shirt 2" class="images">
+        <div class="product-details">
+          <h3>T-Shirt 2</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="tshirt2-price">120</span></p>
+        <p class="stockFont">Current Stock: <span id="tshirt2-stock">10</span></p>
+        <button onclick="increaseStock('tshirt2')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt3.jfif" alt="T-Shirt 3" class="images">
+        <div class="product-details">
+          <h3>T-Shirt 3</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="tshirt3-price">240</span></p>
+        <p class="stockFont">Current Stock: <span id="tshirt3-stock">10</span></p>
+        <button onclick="increaseStock('tshirt')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt4.jfif" alt="T-Shirt 4" class="images">
+        <div class="product-details">
+          <h3>T-Shirt 4</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="tshirt4-price">180</span></p>
+        <p class="stockFont">Current Stock: <span id="tshirt4-stock">10</span></p>
+        <button onclick="increaseStock('tshirt4')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="perfume">
+      <h2>Perfume</h2>
+      <div class="item">
+        <img src="images/perfume1.jfif" alt="Pefume 1" class="images">
+        <div class="product-details">
+          <h3>Perfume 1</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="perfume1-price">160</span></p>
+        <p class="stockFont"> Current Stock: <span id="perfume1-stock">10</span></p>
+        <button onclick="increaseStock('perfume1')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume2.jfif" alt="Perfume 2" class="images">
+        <div class="product-details">
+          <h3>Perfume 2</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="perfume2-price">200</span></p>
+        <p class="stockFont">Current Stock: <span id="perfume2-stock">10</span></p>
+        <button onclick="increaseStock('perfume2')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume3.jfif" alt="Perfume 3" class="images">
+        <div class="product-details">
+          <h3>Perfume 3</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="perfume3-price">120</span></p>
+        <p class="stockFont">Current Stock: <span id="perfume3-stock">10</span></p>
+        <button onclick="increaseStock('perfume3')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans4.jfif" alt="Perfume 4" class="images">
+        <div class="product-details">
+          <h3>Perfume 4</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="perfume4-price">100</span></p>
+        <p class="stockFont">Current Stock: <span id="perfume4-stock">10</span></p>
+        <button onclick="increaseStock('perfume4')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="sando">
+      <h2>Sando</h2>
+      <div class="item">
+        <img src="images/sando1.jfif" alt="Sando 1" class="images">
+        <div class="product-details">
+          <h3>Sando 1</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="sando1-price">90</span></p>
+        <p class="stockFont"> Current Stock: <span id="sando1-stock">10</span></p>
+        <button onclick="increaseStock('sando1')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando2.jfif" alt="Sando 2" class="images">
+        <div class="product-details">
+          <h3>Sando 2</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="sando2-price">70</span></p>
+        <p class="stockFont">Current Stock: <span id="sando2-stock">10</span></p>
+        <button onclick="increaseStock('sando2')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando3.jfif" alt="Sando 3" class="images">
+        <div class="product-details">
+          <h3>Sando 3</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="sando3-price">100</span></p>
+        <p class="stockFont">Current Stock: <span id="sando3-stock">10</span></p>
+        <button onclick="increaseStock('sando3')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando4.jfif" alt="Sando 4" class="images">
+        <div class="product-details">
+          <h3>Sando 4</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="sando4-price">80</span></p>
+        <p class="stockFont">Current Stock: <span id="sando4-stock">10</span></p>
+        <button onclick="increaseStock('sando4')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="toys">
+      <h2>Toys</h2>
+      <div class="item">
+        <img src="images/toy1.jfif" alt="Jeans 1" class="images">
+        <div class="product-details">
+          <h3>Toys 1</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="toy1-price">50</span></p>
+        <p class="stockFont"> Current Stock: <span id="toy1-stock">10</span></p>
+        <button onclick="increaseStock('toy1')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy2.jfif" alt="Toy 2" class="images">
+        <div class="product-details">
+          <h3>Toys 2</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="toy2-price">40</span></p>
+        <p class="stockFont">Current Stock: <span id="toy2-stock">10</span></p>
+        <button onclick="increaseStock('toy2')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy3.jfif" alt="Jeans 3" class="images">
+        <div class="product-details">
+          <h3>Toys 3</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="toy3-price">55</span></p>
+        <p class="stockFont">Current Stock: <span id="toy3-stock">10</span></p>
+        <button onclick="increaseStock('toy3')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy4.jfif" alt="Toy 4" class="images">
+        <div class="product-details">
+          <h3>Toys 4</h3>
+        <br>
+        <p class="priceFont">Price: Php <span id="toy4-price">35</span></p>
+        <p class="stockFont">Current Stock: <span id="toy4-stock">10</span></p>
+        <button onclick="increaseStock('toy4')" class="button-81">Add Stock</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <script src="Azure.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Azure.css">
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      
+      <img class="logo" src="images/Azure.png" alt="Logo">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <span style="font-size: 20px; color: white;">&#9776;</span>
+      </div>
+      <ul id="menu">
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#">Top</a></li>
+        <li><a href="#jeans">Jeans</a></li>
+        <li><a href="#t-shirt">T-Shirts</a></li>
+        <li><a href="#perfume">Perfume</a></li>
+        <li><a href="#sando">Sando</a></li>
+        <li><a href="#toy">Toys</a></li>
+        <li><a href="Stock.html">Manage Stock</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="cart-summary">
+    <button id="cart-button" onclick="openCart()" class="cart_btn">Cart (<span id="cart-count-summary">0</span>)</button>
+    <div class="cart-content" id="cart-content">
+      <div id="cart-items"></div>
+      <div>
+        <input type="radio" id="senior" name="disc" value="0.2"><label for="senior">Senior 20%</label><br>
+        <input type="radio" id="pwd" name="disc" value="0.3"><label for="pwd">PWD 30%</label><br>
+        <input type="radio" id="student" name="disc" value="0.1"><label for="student">Student 10%</label><br>
+        <input type="radio" id="none" name="disc" value="0"><label for="none">None</label><br>
+      </div>
+      <button onclick="calcDis()" class="addToCart_btn">Apply Discount</button>
+      <p><b>SubTotal: Php<span id="carttotal"> 0</span></b></p>
+      <form id="checkout" onsubmit="validateCheckout(event)">
+        <br>
+        <label for="amount">Enter amount: </label>
+        <br>
+        <input type="text" id="amount" name="amount">
+        <br><br>
+      </form>
+      <button onclick="validateCheckout()" class="addToCart_btn">Checkout</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="products" id="jeans">
+      <h2>Jeans</h2>
+      <div class="item">
+        <img src="images/jeans1.png" alt="Jeans 1" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="jeans1-price">300</span></p>
+          <p class="stockFont">Stock: <span id="jeans1-stock">10</span></p>
+          <button onclick="addToCart('Jeans 1', 'jeans1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans2.png" alt="Jeans 2" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="jeans2-price">200</span></p>
+          <p class="stockFont">Stock: <span id="jeans2-stock">15</span></p>
+          <button onclick="addToCart('Jeans 2', 'jeans2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans3.png" alt="Jeans 3" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="jeans3-price">250</span></p>
+          <p class="stockFont">Stock: <span id="jeans3-stock">10</span></p>
+          <button onclick="addToCart('Jeans 3', 'jeans3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/jeans4.jfif" alt="Jeans 4" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="jeans4-price">210</span></p>
+          <p class="stockFont">Stock: <span id="jeans4-stock">15</span></p>
+          <button onclick="addToCart('Jeans 4', 'jeans4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="t-shirt">
+      <h2>T-Shirt</h2>
+      <div class="item">
+        <img src="images/tshirt1.jfif" alt="T-Shirt 1" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt1-price">200</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 1', 'tshirt1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt2.jfif" alt="T-Shirt 2" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt2-price">120</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 2', 'tshirt2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt3.jfif" alt="T-Shirt 3" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt3-price">240</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 3', 'tshirt3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/tshirt4.jfif" alt="T-Shirt 4" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt4-price">180</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 4', 'tshirt4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+    <!-- Repeat similar structure for T-Shirts, Perfume, Sando, and Toys sections -->
+
+    <section class="products" id="t-shirt">
+      <h2>Perfume</h2>
+      <div class="item">
+        <img src="images/perfume1.jfif" alt="T-Shirt 1" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt1-price">160</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 1', 'tshirt1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume2.jfif" alt="T-Shirt 2" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt2-price">200</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 2', 'tshirt2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume3.jfif" alt="T-Shirt 3" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt3-price">120</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 3', 'tshirt3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/perfume4.jfif" alt="T-Shirt 4" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt4-price">100</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 4', 'tshirt4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="t-shirt">
+      <h2>Sando</h2>
+      <div class="item">
+        <img src="images/sando1.jfif" alt="T-Shirt 1" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt1-price">90</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 1', 'tshirt1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando2.jfif" alt="T-Shirt 2" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt2-price">70</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 2', 'tshirt2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando3.jfif" alt="T-Shirt 3" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt3-price">100</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 3', 'tshirt3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/sando4.jfif" alt="T-Shirt 4" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt4-price">80</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 4', 'tshirt4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="t-shirt">
+      <h2>Toys</h2>
+      <div class="item">
+        <img src="images/toy1.jfif" alt="T-Shirt 1" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt1-price">50</span></p>
+          <p class="stockFont">Stock: <span id="tshirt1-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 1', 'tshirt1')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy2.jfif" alt="T-Shirt 2" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt2-price">40</span></p>
+          <p class="stockFont">Stock: <span id="tshirt2-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 2', 'tshirt2')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy3.jfif" alt="T-Shirt 3" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt3-price">55</span></p>
+          <p class="stockFont">Stock: <span id="tshirt3-stock">10</span></p>
+          <button onclick="addToCart('T-shirt 3', 'tshirt3')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+      <div class="item">
+        <img src="images/toy4.jfif" alt="T-Shirt 4" class="images">
+        <div class="product-details">
+          <p class="priceFont">Price: Php <span id="tshirt4-price">35</span></p>
+          <p class="stockFont">Stock: <span id="tshirt4-stock">15</span></p>
+          <button onclick="addToCart('T-shirt 4', 'tshirt4')" class="button-81">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="Azure.js"></script>
+</body>
+</html>

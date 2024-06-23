@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITEC87 - Compilation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* styles.css */
+    body {
+      font-family: 'Brush Script MT', cursive;
+      transition: background-color 0.3s, color 0.3s;
+      justify-content: center;
+      align-items: center;
+      background-image: url('image/cct.png'); /* Replace 'background.jpg' with your image path */
+      background-repeat: no-repeat; /* Prevent the background from repeating */
+      background-size: auto 145%;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+        color: #888;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 70px;
+        height: 27px;
+        margin-right: 10px; /* Adjust spacing */
+    }
+
+    .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+    }
+
+    input:checked + .slider {
+        background-color: #4caf50;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(43px);
+    }
+
+    .toggle-label {
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .content {
+        padding: 20px;
+        text-align: center;
+        background-color: #fff;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #333;
+        color: #000;
+    }
+
+    .dark-mode .jumbotron {
+        background-color: #272727;
+        color: #fff ;
+    }
+
+    .dark-mode .content {
+        background-color: #333;
+        color: #000;
+    }
+
+    .dark-mode .card {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .dark-mode .footer {
+        background-color: #272727;
+        color: #fff ;
+    }
+
+    .dark-mode  .navbar{
+      background-color: #272727;
+      color: #fff ;
+    }
+
+    .footer {
+        padding: 20px 0;
+        background-color: whitesmoke;
+    }
+
+    .jumbotron {
+        background: white;
+        height: 250px;
+
+    }
+
+    .display-4 {
+        overflow: hidden; /* Ensures the text doesn't show before animation */
+        border-right: .15em solid transparent; /* Cursor effect */
+        white-space: nowrap; /* Keeps the text in one line */
+        margin: 0 auto; /* Centering the text */
+        animation: typing 2s steps(20, end);
+        margin-top: -20px;
+        font-size: 60px;
+    }
+
+    /* Typing animation */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 50% }
+    }
+
+    img {
+        border: 1px solid black;
+    }
+
+    .card {
+        height: 500px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width:  768px) {
+      .display-4 {
+        overflow: hidden; /* Ensures the text doesn't show before animation */
+        border-right: .15em solid transparent; /* Cursor effect */
+        white-space: nowrap; /* Keeps the text in one line */
+        margin: 0 auto; /* Centering the text */
+        animation: typing 2s steps(20, end);
+        margin-top: -20px;
+        font-size: 20px;
+    }
+
+    .jumbotron {
+        background: transparent;
+        height: 90px;
+    }
+
+    .toggle-container {
+        margin-right: -20px;
+        margin-top: -10px;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        height: 20px;
+        margin-right: 5px; /* Adjust spacing */
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(13px);
+    }
+
+    .toggle-label {
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    }
+
+    .navbar{
+      float: right;
+      top: 10px
+    }
+
+    @keyframes moveShadow {
+            0% {
+                box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .card {
+            animation: moveShadow 3s infinite;
+        }
+
+
+
+  </style>
+</head>
+  
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="toggle-container ml-auto">
+        <label class="switch">
+          <input type="checkbox" id="modeToggle">
+          <span class="slider round"></span>
+        </label>
+        <span class="toggle-label">Dark Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="jumbotron text-center">
+    <center><h1 class="display-4">Welcome to My <br>Final Project in ITEC87</h1></center>
+    <hr class="my-4">
+  </header>
+
+  <main>
+    <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 mb-6">
+        <div class="card">
+          <img src="image/resume.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Resume</h5>
+            <a href="resume.HTML" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-6">
+        <div class="card">
+          <img id="menu" src="image/menu.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Restaurant Menu</h5>
+            <a href="Restaurant.html" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-6">
+        <div class="card">
+          <img src="image/cor.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Certificate of Registration</h5>
+            <a href="cor.html" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-6">
+        <div class="card">
+          <img src="image/store.png" id="store" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sari-Sari Store</h5>
+            <a href="Azure.html" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <span class="text-muted">&copy; 2024 All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Script for dark mode toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modeToggle = document.getElementById('modeToggle');
+
+      modeToggle.addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          document.querySelector('.toggle-label').textContent = 'Light Mode';
+        } else {
+          document.querySelector('.toggle-label').textContent = 'Dark Mode';
+        }
+      });
+
+      // Check initial state based on user preference or system settings
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      if (prefersDarkScheme.matches) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.toggle-label').textContent = 'Light Mode';
+        modeToggle.checked = true;
+      }
+    });
+  </script>
+</body>
+</html>
